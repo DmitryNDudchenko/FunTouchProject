@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lni-2H-eNC">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MusicFinder-->
+        <scene sceneID="pBn-BZ-8S5">
+            <objects>
+                <viewController id="duN-87-fnr" customClass="SearchViewController" customModule="FunTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzx-48-2s7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fk6-to-1ZB">
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="TrackCell" rowHeight="62" id="Zlm-Z7-87y" userLabel="Track Cell" customClass="TrackCell" customModule="FunTouch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zlm-Z7-87y" id="Ew7-3s-nKZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbN-r0-s7P">
+                                                    <rect key="frame" x="14" y="29" width="35" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLW-I9-E8R">
+                                                    <rect key="frame" x="14.000000000000002" y="8" width="31.666666666666671" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView hidden="YES" opaque="NO" tag="40" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-7a-UXm">
+                                                    <rect key="frame" x="14" y="52" width="257" height="4"/>
+                                                </progressView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZe-T7-iqm">
+                                                    <rect key="frame" x="337" y="12" width="48" height="30"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cancelTapped:" destination="Zlm-Z7-87y" eventType="touchUpInside" id="S0R-Rc-x4r"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nT-7E-Gom">
+                                                    <rect key="frame" x="287" y="12" width="42" height="30"/>
+                                                    <state key="normal" title="Pause">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pauseOrResumeTapped:" destination="Zlm-Z7-87y" eventType="touchUpInside" id="H1s-bZ-gBp"/>
+                                                    </connections>
+                                                </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% of 1.35MB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLi-SU-ouY">
+                                                    <rect key="frame" x="287" y="45" width="97" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJM-nG-GtW">
+                                                    <rect key="frame" x="282" y="9" width="94" height="30"/>
+                                                    <state key="normal" title="Download">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="downloadTapped:" destination="Zlm-Z7-87y" eventType="touchUpInside" id="feb-ZI-VxN"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" red="0.98624604940000005" green="0.0071207880970000003" blue="0.027434188870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="8nT-7E-Gom" firstAttribute="top" secondItem="Ew7-3s-nKZ" secondAttribute="topMargin" constant="1" id="29j-vg-2eg"/>
+                                                <constraint firstAttribute="trailing" secondItem="oLi-SU-ouY" secondAttribute="trailing" constant="9" id="6vN-9c-OBk"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZbN-r0-s7P" secondAttribute="trailing" constant="102" id="7R3-I3-HZy"/>
+                                                <constraint firstItem="ZbN-r0-s7P" firstAttribute="top" secondItem="bLW-I9-E8R" secondAttribute="bottom" constant="1" id="80u-Qq-C57"/>
+                                                <constraint firstItem="JAs-7a-UXm" firstAttribute="centerY" secondItem="oLi-SU-ouY" secondAttribute="centerY" constant="2" id="BYI-1y-naQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="OJM-nG-GtW" secondAttribute="trailing" constant="17" id="BdM-qY-jOq"/>
+                                                <constraint firstItem="ZbN-r0-s7P" firstAttribute="leading" secondItem="Ew7-3s-nKZ" secondAttribute="leading" constant="14" id="Mdh-R7-erY"/>
+                                                <constraint firstItem="oLi-SU-ouY" firstAttribute="leading" secondItem="8nT-7E-Gom" secondAttribute="leading" id="Nyq-rp-lMN"/>
+                                                <constraint firstItem="OJM-nG-GtW" firstAttribute="leading" secondItem="JAs-7a-UXm" secondAttribute="trailing" constant="11" id="Tdz-fe-SSh"/>
+                                                <constraint firstItem="VZe-T7-iqm" firstAttribute="centerY" secondItem="8nT-7E-Gom" secondAttribute="centerY" id="VQH-9C-0Qs"/>
+                                                <constraint firstAttribute="trailing" secondItem="VZe-T7-iqm" secondAttribute="trailing" constant="8" id="Wab-aI-DJC"/>
+                                                <constraint firstItem="OJM-nG-GtW" firstAttribute="top" secondItem="Ew7-3s-nKZ" secondAttribute="top" constant="9" id="Wzy-Jo-KTm"/>
+                                                <constraint firstItem="VZe-T7-iqm" firstAttribute="leading" secondItem="8nT-7E-Gom" secondAttribute="trailing" constant="8" id="buT-j6-3uv"/>
+                                                <constraint firstItem="bLW-I9-E8R" firstAttribute="top" secondItem="Ew7-3s-nKZ" secondAttribute="top" constant="8" id="dCn-UA-eC2"/>
+                                                <constraint firstItem="JAs-7a-UXm" firstAttribute="top" secondItem="ZbN-r0-s7P" secondAttribute="bottom" constant="6" id="hlp-hD-NpO"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="bLW-I9-E8R" secondAttribute="trailing" constant="102" id="j2J-CU-bTr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JAs-7a-UXm" secondAttribute="trailing" constant="102" id="jnW-jz-XJu"/>
+                                                <constraint firstItem="VZe-T7-iqm" firstAttribute="top" secondItem="Ew7-3s-nKZ" secondAttribute="topMargin" constant="1" id="ktL-yF-zcD"/>
+                                                <constraint firstItem="bLW-I9-E8R" firstAttribute="leading" secondItem="Ew7-3s-nKZ" secondAttribute="leading" constant="14" id="tZI-uN-8UC"/>
+                                                <constraint firstItem="JAs-7a-UXm" firstAttribute="leading" secondItem="Ew7-3s-nKZ" secondAttribute="leading" constant="14" id="ygB-AO-9cV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="ZbN-r0-s7P" id="qa4-Tr-TxB"/>
+                                            <outlet property="cancelButton" destination="VZe-T7-iqm" id="oRS-2m-6vB"/>
+                                            <outlet property="downloadButton" destination="OJM-nG-GtW" id="nqE-Pf-6jB"/>
+                                            <outlet property="pauseButton" destination="8nT-7E-Gom" id="1A9-HT-1kb"/>
+                                            <outlet property="progressLabel" destination="oLi-SU-ouY" id="M7J-fn-krY"/>
+                                            <outlet property="progressView" destination="JAs-7a-UXm" id="Gig-AS-Xt1"/>
+                                            <outlet property="titleLabel" destination="bLW-I9-E8R" id="68s-Ia-BNJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="duN-87-fnr" id="SyC-uq-m4P"/>
+                                    <outlet property="delegate" destination="duN-87-fnr" id="XL9-pm-wEJ"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" text="" placeholder="Song name or artist" translatesAutoresizingMaskIntoConstraints="NO" id="JmF-Ku-nXv">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="duN-87-fnr" id="we9-WK-syW"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nLt-Kj-DuB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fk6-to-1ZB" firstAttribute="leading" secondItem="nLt-Kj-DuB" secondAttribute="leading" id="2KY-RX-FpU"/>
+                            <constraint firstItem="JmF-Ku-nXv" firstAttribute="top" secondItem="nLt-Kj-DuB" secondAttribute="top" id="Bic-F2-s0t"/>
+                            <constraint firstItem="fk6-to-1ZB" firstAttribute="top" secondItem="JmF-Ku-nXv" secondAttribute="bottom" id="SpU-bn-m35"/>
+                            <constraint firstItem="nLt-Kj-DuB" firstAttribute="trailing" secondItem="JmF-Ku-nXv" secondAttribute="trailing" id="U4J-By-YAc"/>
+                            <constraint firstItem="JmF-Ku-nXv" firstAttribute="leading" secondItem="nLt-Kj-DuB" secondAttribute="leading" id="cmx-Wb-haV"/>
+                            <constraint firstItem="nLt-Kj-DuB" firstAttribute="bottom" secondItem="fk6-to-1ZB" secondAttribute="bottom" id="gNz-rF-qvc"/>
+                            <constraint firstItem="nLt-Kj-DuB" firstAttribute="trailing" secondItem="fk6-to-1ZB" secondAttribute="trailing" id="sof-cZ-ysZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MusicFinder" style="browser" id="BsU-t9-6am"/>
+                    <connections>
+                        <outlet property="searchBar" destination="JmF-Ku-nXv" id="Mi0-23-341"/>
+                        <outlet property="tableView" destination="fk6-to-1ZB" id="uXX-s2-plD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ox3-h8-FQg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3351.9083969465646" y="764.78873239436621"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TNK-5M-EiQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lni-2H-eNC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Exf-Z9-6ve"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fji-EN-aNN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="duN-87-fnr" kind="relationship" relationship="rootViewController" id="Hh1-X4-0kE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeP-db-sDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2425.1908396946565" y="764.78873239436621"/>
+        </scene>
+    </scenes>
+</document>

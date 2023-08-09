@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Sq-6S-aXR">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--RESTfull Alamofire Client-->
+        <scene sceneID="ndh-za-Khu">
+            <objects>
+                <viewController id="g6L-NN-Fva" customClass="AlViewController" customModule="FunTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jE8-EJ-qC7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9g9-Bg-lfS">
+                                <rect key="frame" x="50" y="215" width="275" height="205.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-yy-C4h">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="45.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="GET">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="getMethodAction:" destination="g6L-NN-Fva" eventType="touchUpInside" id="WXE-c8-Yvr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dof-Ud-Tc9">
+                                        <rect key="frame" x="0.0" y="53.5" width="275" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="POST">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="postMethodAction:" destination="g6L-NN-Fva" eventType="touchUpInside" id="oqN-hn-8Lf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-NP-MUv">
+                                        <rect key="frame" x="0.0" y="106.5" width="275" height="45.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="PUT">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="putMethodAction:" destination="g6L-NN-Fva" eventType="touchUpInside" id="jUm-wj-JiA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrz-tU-9Al">
+                                        <rect key="frame" x="0.0" y="160" width="275" height="45.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="DELETE">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteMethodAction:" destination="g6L-NN-Fva" eventType="touchUpInside" id="PO7-RM-Ef6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205.33000000000001" id="9UD-11-aCv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kmf-2b-Y0c"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Kmf-2b-Y0c" firstAttribute="trailing" secondItem="9g9-Bg-lfS" secondAttribute="trailing" constant="50" id="CC3-1Z-rsY"/>
+                            <constraint firstItem="9g9-Bg-lfS" firstAttribute="top" secondItem="Kmf-2b-Y0c" secondAttribute="top" constant="171" id="DkA-ar-qU5"/>
+                            <constraint firstItem="9g9-Bg-lfS" firstAttribute="leading" secondItem="Kmf-2b-Y0c" secondAttribute="leading" constant="50" id="Qre-wI-QsN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RESTfull Alamofire Client" largeTitleDisplayMode="always" id="HrC-2c-XAM"/>
+                    <connections>
+                        <outlet property="deleteMethodButton" destination="hrz-tU-9Al" id="uXz-rS-Qnp"/>
+                        <outlet property="getMethodButton" destination="bOa-yy-C4h" id="TlM-In-QrC"/>
+                        <outlet property="postMethodButton" destination="dof-Ud-Tc9" id="Tax-0K-CJJ"/>
+                        <outlet property="putMethodButton" destination="Deq-NP-MUv" id="jlL-dz-JUS"/>
+                        <segue destination="a7R-nr-0ip" kind="show" identifier="detailsseg" id="Ecr-la-jj6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="My6-he-JvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3628.2442748091603" y="17.605633802816904"/>
+        </scene>
+        <!--Det View Controller-->
+        <scene sceneID="3dv-X4-cNR">
+            <objects>
+                <viewController id="a7R-nr-0ip" customClass="DetViewController" customModule="FunTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iGp-K7-CMm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-B6-prp">
+                                <rect key="frame" x="16" y="67" width="343" height="566"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y4r-XS-caA"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="y4r-XS-caA" firstAttribute="trailing" secondItem="OMl-B6-prp" secondAttribute="trailing" constant="16" id="074-wF-Pyl"/>
+                            <constraint firstItem="OMl-B6-prp" firstAttribute="top" secondItem="y4r-XS-caA" secondAttribute="top" constant="23" id="Pry-LM-Hso"/>
+                            <constraint firstItem="OMl-B6-prp" firstAttribute="leading" secondItem="y4r-XS-caA" secondAttribute="leading" constant="16" id="mwE-3f-2hN"/>
+                            <constraint firstItem="y4r-XS-caA" firstAttribute="bottom" secondItem="OMl-B6-prp" secondAttribute="bottom" constant="34" id="yAk-hd-DDA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AYp-QE-Fuc"/>
+                    <connections>
+                        <outlet property="jsonResultsTextView" destination="OMl-B6-prp" id="CHz-Ei-y0L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcZ-oW-pUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4532.06106870229" y="17.605633802816904"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pxe-BV-0Te">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Sq-6S-aXR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GIC-Mz-3H1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g6L-NN-Fva" kind="relationship" relationship="rootViewController" id="UyJ-Rf-aFd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwd-Vz-EGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701.5267175572517" y="17.605633802816904"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
